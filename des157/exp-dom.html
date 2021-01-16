@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Experimentation - Krithika Govind</title>
+    <style>
+        .red{background-color: rgb(250, 60, 60);}
+        .yellow{background-color: rgb(250, 244, 84);}
+        .green{background-color: rgb(75, 196, 75);}
+        .blue{background-color: rgb(74, 122, 255);}
+
+        h2, h3, h4{
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        .box{
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 300ms ease-in;
+        }
+
+        .colors{
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <h1>Can you guess which color I am thinking of?</h1>
+
+    <div class="colors">
+        <div class="box red">Red</div>
+        <div class="box yellow">Yellow</div>
+        <div class="box blue">Blue</div>
+        <div class="box green">Green</div>
+    </div>
+
+    <h2 id="result"></h2>
+    <h3>Refresh the page to restart!</h3>
+
+    <script>
+        // This program prompts the user for a color - either red, yellow, green, or blue. 
+        // It then picks a random color from an array. If the color entered by the user is matching the color picked by the program,
+        // it displays the output message "You are right!". Otherwise, it displays "Try again!".
+        // Note to player: You have a 25% chance of guessing the color correctly, so you might have to play multiple times before you win.
+
+        var colors = ["red", "yellow", "green", "blue"];
+
+        var choice = prompt("Can you guess what color I am thinking of?\nPick a color between red, yellow, green and blue.");
+
+        var arrayIndex = Math.floor((4) * Math.random());
+        var result = checkAnswer(arrayIndex);
+
+        if (result == true){
+            document.getElementById('result').innerHTML = 'You are right!';
+            document.getElementById('result').style.color = "green";
+        }
+        else{
+            document.getElementById('result').innerHTML = 'Try again!';
+            document.getElementById('result').style.color = "red";
+        }
+
+        for(var i=0; i<colors.length; i++){
+            if(i == arrayIndex){
+                document.querySelector(`.${colors[i]}`).style.transform = "scale(1.5)";
+            }
+        }
+
+        function checkAnswer(arrayIndex){
+            var isCorrect;
+            if (colors[arrayIndex] == choice.toLowerCase()){
+                isCorrect = true;     
+            }
+            else{
+                isCorrect = false;
+            }
+            return isCorrect;
+        }
+
+    </script>
+</body>
+</html>
