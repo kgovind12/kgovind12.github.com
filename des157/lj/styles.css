@@ -1,0 +1,103 @@
+:root {
+    --light-gray: #f8f2e8;
+    --main-purple: #403D58;
+    --light-purple: #656085;
+    --bright-orange: #FC7753;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+header{
+    background: #656085;
+    width: 85%;
+    height: 35vh;
+    margin: 3% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+header h1{
+    color: white;
+    font-weight: 700;
+}
+
+.banner-text{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+
+.post{
+    width: 85%;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    margin: auto;
+    padding: 2%;
+}
+
+.post p{
+    line-height: 1.5em;
+    font-size: 1.1em;
+}
+
+footer{
+    margin-top: 3%;
+    width: 100%;
+    background-color: var(--light-purple);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+footer a{
+    border-right: 1px solid var(--bright-orange);
+    padding: 0 3rem;
+    color: var(--bright-orange);
+    text-decoration: none;
+}
+
+footer a:last-child{
+    border-right: none;
+}
+
+/* Animations */
+
+.rectangle{
+    height: 4px;
+    width: 100%;
+    background-color: var(--bright-orange);
+    position: relative;
+}
+
+#rectangle1{
+    top: -40%;
+    animation: animation1 7s ease-in-out infinite alternate;
+}
+
+#rectangle2{
+    top: 40%;
+    animation: animation1 5s ease-in-out infinite alternate;
+}
+
+
+@keyframes animation1 {
+    from { left: -50%; width: 55%; }
+    50% { width: 100%; }
+    to { left: 50%; width: 55%; }
+}
+
+/* @keyframes animation1 {
+    from { transform: scale(0); opacity: 0.9;}
+    to { transform: scale(2); opacity: 0.5;}
+} */
