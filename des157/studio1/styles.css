@@ -1,0 +1,121 @@
+/* :root{
+    --main-heading: rgb(57, 67, 142);
+    --main-green: #7BA574;
+    --spot-color: rgb(78, 91, 193);
+}
+
+body{
+    background: url(images/madlibsgraphic-01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 6rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-size: 5em;
+    background-color: white;
+    color: var(--main-heading);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: -2px 2px 5px 0px gray;
+    width: 25%;
+    font-family: 'Carter One', cursive;
+}
+
+h2{
+    color: var(--main-heading);
+    font-size: 2em;
+}
+
+.instructions{
+    font-size: 1.4em;
+    line-height: 1.5em;
+    width: 30%;
+}
+
+.card{
+    background-color: white;
+    border-radius: 15px;
+    padding: 1rem 4rem;
+    width: 30%;
+    height: auto;
+    position: fixed;
+    bottom: 7%;
+    right: 10%;
+    max-height: 72%;
+    box-shadow: -2px 2px 5px 0px gray;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-bottom: 0.3rem;
+}
+
+input{
+    height: 2rem;
+    margin-bottom: 1.3rem;
+    background: white;
+    border-radius: 7px;
+    border: 1px solid rgb(176, 176, 176);
+    box-shadow: 0px 0px 3px 0px var(--main-green);
+    outline: none;
+}
+
+input[type=text]:focus {
+    box-shadow: 0px 0px 3px 2px var(--main-green);
+  }
+
+#submit{
+    margin-top: 1rem;
+    height: 2.7rem;
+    width: 50%;
+    background-color: var(--spot-color);
+    color: white;
+    border: none;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+#submit:hover{
+    opacity: 0.8;
+}
+
+.story a{
+    display: block;
+    text-align: center;
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+    height: 1.5rem;
+    padding: 0.7rem;
+    width: 35%;
+    background-color: var(--spot-color);
+    color: white;
+    border: none;
+    margin-left: auto;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.8em;
+    line-height: normal;
+}
+
+// Reveal story
+
+.hide{
+    display: none;
+}
+
+.reveal{
+    display: block;
+    line-height: 1.7em;
+    font-size: 1.2em;
+}
+
+span{
+    text-decoration: underline;
+} */
