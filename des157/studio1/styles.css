@@ -1,4 +1,4 @@
-/* :root{
+:root{
     --main-heading: rgb(57, 67, 142);
     --main-green: #7BA574;
     --spot-color: rgb(78, 91, 193);
@@ -104,7 +104,7 @@ input[type=text]:focus {
     line-height: normal;
 }
 
-// Reveal story
+/* // Reveal story */
 
 .hide{
     display: none;
@@ -118,4 +118,8 @@ input[type=text]:focus {
 
 span{
     text-decoration: underline;
-} */
+}
+
+.name{
+    text-transform: capitalize;
+}
