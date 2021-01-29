@@ -7,48 +7,53 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Mad Libs 2.0</h1>
-    </header>
-
-    <main>
-        <p class="instructions">Follow the instructions to fill out the fields to the right, and then build your very own custom story!</p>
-        <div class="card">
-            <form>
-                <h2>Let's play!</h2>
+    <div class="pagecontainer">
+        <header>
+            <h1>Mad Libs 2.0</h1>
+            <p class="instructions">Follow the instructions to fill out the fields to the right, then click the button to build your very own custom story!</p>
+        </header>
     
-                <label for="adjective">Enter an adjective:</label>
-                <input type="text" name="adjective" id="adjective" required>
-    
-                <label for="adverb">Enter an adverb:</label>
-                <input type="text" name="adverb" id="adverb" required>
-    
-                <label for="person">Enter an person's name:</label>
-                <input type="text" name="person" id="person" required>
-    
-                <label for="verb">Enter an verb:</label>
-                <input type="text" name="verb" id="verb" required>
+        <main>  
+            <div class="card">
+                <form>
+                    <h2>Let's play!</h2>
         
-                <label for="noun">Enter a noun:</label>
-                <input type="text" name="noun" id="noun" required>
+                    <label for="adjective">Enter an adjective:</label>
+                    <input type="text" id="adjective" required>
         
-                <input type="submit" value="Build your story!" id="submit">
-            </form>
-    
-            <div class="story hide">
-                <h2>Tillydrone Rainforest</h2>
-                <p></p>
-                <a href="">Play again</a>
+                    <label for="adverb">Enter an adverb:</label>
+                    <input type="text" id="adverb" required>
+        
+                    <label for="person">Enter a person's name:</label>
+                    <input type="text" id="person" required>
+        
+                    <label for="verb">Enter a verb:</label>
+                    <input type="text" id="verb" required>
+            
+                    <label for="noun">Enter a noun:</label>
+                    <input type="text" id="noun" required>
+            
+                    <input type="submit" value="Build your story!" id="submit">
+                </form>
+        
+                <div class="story hide">
+                    <h2>Tillydrone Rainforest</h2>
+                    <p></p>
+                    <a href="">Play again</a>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>  
 
-
-
+    <footer>
+        <a href="mailto:&#107;&#103;&#111;&#118;&#105;&#110;&#100;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email</a>
+        <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+    </footer>
 
 </body>
 </html>

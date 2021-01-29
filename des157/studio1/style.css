@@ -1,26 +1,45 @@
 :root{
     --main-heading: rgb(57, 67, 142);
     --main-green: #7BA574;
+    --side-green: #D0E1CF;
     --spot-color: rgb(78, 91, 193);
 }
 
 body{
-    background: url(images/madlibsgraphic-01.png);
-    background-size: cover;
+    background: url(images/madlibsgraphic_edited-01.png);
+    /* background-size: cover; */
     background-repeat: no-repeat;
-    margin: 6rem;
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.pagecontainer{
+    display: flex;
+    margin: 4rem;
+}
+
+header{
+    width: 600px;
+    padding-right: 3rem;
+}
+
+main{
+    padding-top: 70px;
 }
 
 h1{
-    font-size: 5em;
+    font-size: 4.6em;
     background-color: white;
     color: var(--main-heading);
     padding: 2rem;
+    max-width: 450px;
     border-radius: 15px;
     box-shadow: -2px 2px 5px 0px gray;
-    width: 25%;
     font-family: 'Carter One', cursive;
+}
+
+header p{
+    max-width: 500px;
 }
 
 h2{
@@ -31,19 +50,14 @@ h2{
 .instructions{
     font-size: 1.4em;
     line-height: 1.5em;
-    width: 30%;
 }
 
 .card{
     background-color: white;
     border-radius: 15px;
-    padding: 1rem 4rem;
-    width: 30%;
-    height: auto;
-    position: fixed;
-    bottom: 7%;
-    right: 10%;
-    max-height: 72%;
+    padding: 0.2rem 4rem;
+    width: 400px;
+    max-width: 400px;
     box-shadow: -2px 2px 5px 0px gray;
 }
 
@@ -58,7 +72,7 @@ label{
 
 input{
     height: 2rem;
-    margin-bottom: 1.3rem;
+    margin-bottom: 1rem;
     background: white;
     border-radius: 7px;
     border: 1px solid rgb(176, 176, 176);
@@ -104,6 +118,43 @@ input[type=text]:focus {
     line-height: normal;
 }
 
+/* Larger screens */
+
+@media(min-width: 1367px){
+    body{
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1460px){ 
+    header{
+        margin-left: 6%;
+    }
+
+    main{
+        position: fixed;
+        right: 20%;
+        bottom: 15%;
+        margin-right: 2rem;
+    }
+}
+
+footer{
+    background-color: var(--main-green);
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+footer a{
+    padding: 0 2rem;
+    color: var(--main-heading);
+    text-decoration: none;
+}
+
 /* // Reveal story */
 
 .hide{
@@ -113,7 +164,7 @@ input[type=text]:focus {
 .reveal{
     display: block;
     line-height: 1.7em;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 span{
