@@ -34,6 +34,17 @@ header h1{
     position: absolute;
 }
 
+#post-image{
+    float: right;
+    width: 40%;    
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+img{
+    width: 100%;
+}
+
 .post{
     width: 60%;
     box-sizing: border-box;
