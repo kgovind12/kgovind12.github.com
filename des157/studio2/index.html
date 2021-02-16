@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Picture - Landscape Photography</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@200&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my landscape gallery!</h1>
+        <p>Hi, I'm Krithika, photography fanatic! Here's an archive of my landscape photography. 
+            Click on the left and right images to flip through the carousel, or click on the center image to learn more about it!
+        </p>
+    </header>
+
+    <main>
+        <!-- Gallery images -->
+        <div id="leftscroll"></div>
+        <img id="img6" class="image farleft" src="images/img6.jpg" alt="Las Vegas photo" width="auto" height="auto">
+        <img id="img1" class="image left" src="images/img1.jpg" alt="Fort Bragg beach side photo" width="auto" height="auto">
+        <img id="img5" class="image prev" src="images/img5.jpg" alt="Las Vegas fountain photo" width="auto" height="auto">
+        <img id="img2" class="image current" src="images/img2.jpg" alt="Lake Elizabeth sunset photo" width="auto" height="auto">
+        <img id="img4" class="image next" src="images/img4.jpg" alt="Pismo beach sunset photo" width="auto" height="auto">
+        <img id="img3" class="image right" src="images/img3.jpg" alt="Lake Elizabeth bridge photo" width="auto" height="auto">
+        <img id="img7" class="image farright" src="images/img7.jpg" alt="San Francisco seaside photo" width="auto" height="auto">
+        <div id="rightscroll"></div>
+    </main>
+
+    <section id="overlay" class="hidden">
+        <img src="" alt="focused photo" width="auto" height="auto">
+        <button class="close">&times;</button>
+        <p>
+            This photo was taken at Lake Elizabeth in Fremont, California. I used to come here all
+            the time as a kid and always loved the sunsets. Here you can see the orange glow of the sun 
+            through the trees. 
+        </p>
+    </section>
+
+    <footer>
+        <a href="mailto:&#107;&#103;&#111;&#118;&#105;&#110;&#100;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email</a>
+        <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+    </footer>
+
+</body>
+</html>
