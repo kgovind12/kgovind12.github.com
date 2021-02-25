@@ -18,7 +18,7 @@
     const playGameScreen = document.getElementById('playgame');
     const messageText = document.getElementById('message');
     const playerTurn = document.getElementById('playerturn');
-    const dice = ['die1.png', 'die2.png', 'die3.png', 'die4.png', 'die5.png', 'die6.png'];
+    var dice = ['die1.png', 'die2.png', 'die3.png', 'die4.png', 'die5.png', 'die6.png'];
     var dice1 = document.getElementById('dice1');
     var dice2 = document.getElementById('dice2');
     const scorePlayer1 = document.getElementById('score1');
@@ -168,7 +168,7 @@
             // One rolled - switch turn
             player.index == 0 ? (rollPlayer1.innerHTML = 'Roll') : (rollPlayer2.innerHTML = 'Roll'); // set the player's button back to 'Roll'
             turn = !turn;
-            messageText.innerHTML = `You rolled a one! Switch to Player ${turn+1}`;
+            messageText.innerHTML = `You rolled a one! Switching to Player ${turn+1}`;
             playerTurn.innerHTML = `Player ${turn+1}'s turn`;
         } else {
             // game proceeds
