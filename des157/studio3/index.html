@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Pig</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <a id="quitgame" href="" class="red hide">Quit Game</a>
+        <div class="game-title">
+            <img src="images/pig.png" alt="pig illustration" width="110px" height="auto">
+            <div class="parentcontainer">
+                <img class="bubble-text" src="images/speechbubble.png" alt="speech bubble" width="550px" height="90px">
+                <h1>Welcome to the Game of Pig!</h1>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <ol>
+                <li>Roll the dice when it's your turn. The number you roll gets added to your score.</li>
+                <li>If you roll a one, the turn passes to the next player.</li>
+                <li>You can also choose to pass your turn to the next player.</li>
+                <li>Be careful! If you roll two ones, or 'Snake Eyes', your score gets set back to zero!</li>
+                <li>The first player to reach a score of 30 wins!</li>
+            </ol>
+        </div>
+    </header>
+
+    <main>
+        <a id="startgame" class="green">Start Game  &nbsp;  ------></a>
+
+        <div id="playgame" class="hide">
+            <div class="card">
+                <h2>Player 1</h2>
+                <h3>Score:</h3>
+                <h1 id="score1">0</h1>
+                <a id="roll1" class="green">Roll</a>
+                <a id="pass1" class="red">Pass</a>
+            </div>
+    
+            <div class="middle">
+                <h2 id="playerturn"></h2>
+                <p id="message"></p>
+                <div class="dice">
+                    <img id="dice1" src="images/die1.png" alt="first dice" width="140px" height="140px">
+                    <img id="dice2" src="images/die2.png" alt="second dice" width="140px" height="140px">
+                </div>
+            </div>
+    
+            <div class="card">
+                <h2>Player 2</h2>
+                <h3>Score:</h3>
+                <h1 id="score2">0</h1>
+                <a id="roll2" class="green">Roll</a>
+                <a id="pass2" class="red">Pass</a>
+            </div>
+        </div>
+    </main>
+
+    <section id="win-overlay" class="hide">
+        <div id="overlaycontent" class="hide">
+            <h1 id="winner"></h1>
+            <div class="overlaybuttons">
+                <a class="red" href="">Quit</a>
+                <a id="playagain" class="green" href="">Play Again</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="sources.html">Sources</a>
+        <a href="mailto:&#107;&#103;&#111;&#118;&#105;&#110;&#100;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email</a>
+        <a href="https://validator.w3.org/check?uri=referer">Valid&nbsp;HTML&nbsp;5</a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid&nbsp;CSS</a>
+    </footer>
+</body>
+</html>

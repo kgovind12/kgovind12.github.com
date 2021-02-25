@@ -1,0 +1,202 @@
+:root{
+    --main-green: rgba(72, 194, 90, 0.844);
+    --main-red: rgba(227, 102, 110, 0.879);
+    --background: rgb(211, 239, 249);
+    --spot-color: rgba(232, 138, 169, 0.934);
+    --dark-spot: rgb(52, 52, 52);
+}
+
+body{
+    background-color: var(--background);
+    margin: 0;
+    font-family: 'Questrial', sans-serif;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4{
+    font-family: 'Varela Round', sans-serif;
+}
+
+main{
+    text-align: center;
+    margin: 0 3rem;
+}
+
+.game-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.parentcontainer{
+    position: relative;
+    height: 70px;
+    width: 500px;
+}
+
+header h1{
+    position: absolute;
+    top: 3%;
+    left: 12%;
+    width: 100%;
+}
+
+header a{
+    background-color: var(--main-red);
+    padding: 1rem;
+    font-size: 1.2em;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    display: inline-block;
+    position: absolute;
+    top: 4%;
+    right: 2%;
+}
+
+.instructions{
+    max-width: 50%;
+    margin: auto;
+    margin-bottom: 3rem;
+    line-height: 1.5em;
+    padding-left: 10%;
+}
+
+#playgame{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: opacity 1s;
+}
+
+.card{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.19);
+    padding: 2rem;
+    min-width: 300px;
+}
+
+.card h1{
+    font-size: 6em;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.card h2, .middle h2{
+    font-size: 2em;
+    margin: 0;
+}
+
+.center-aligned{
+    text-align: center;
+}
+
+a{
+    padding: 1rem;
+    font-size: 1.2em;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    margin: 0 0.5rem;
+    width: 100px;
+    display: inline-block;
+}
+
+a:hover{
+    opacity: 0.5;
+    transition: 0.25s ease;
+}
+
+#startgame{
+    padding: 2rem;
+    color: white;
+    margin-top: 3rem;
+    width: 30%;
+}
+
+.middle{
+    text-align: center;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 350px;
+}
+
+.middle p{
+    font-size: 1.5em;
+}
+
+.green{
+    background-color: var(--main-green);
+}
+
+.red{
+    background-color: var(--main-red);
+}
+
+.hide{
+    opacity: 0;
+    transform: scale(0);
+}
+
+footer{
+    background-color: var(--spot-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer a{
+    padding: 0 3rem;
+    color: var(--dark-spot);
+    text-decoration: none;
+}
+
+footer a:last-child{
+    border-right: none;
+}
+
+
+/* Winning overlay */
+
+#win-overlay{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#overlaycontent{
+    text-align: center;
+    box-sizing: border-box;
+    background-color:#fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 40vw;
+    height: 40vh;
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+}
+
+#overlaycontent h1{
+    font-size: 3rem;
+}
+
