@@ -81,7 +81,6 @@
         event.preventDefault();
 
         if(turn == 0 && !gameOver) {
-            console.log("Roll player 1");
             rollDice(playerOne);
         } else {
             return;
@@ -93,7 +92,6 @@
         event.preventDefault();
 
         if(turn == 1 && !gameOver) {
-            console.log("Roll player 2");
             rollDice(playerTwo);
         } else {
             return;
@@ -150,7 +148,6 @@
         diceRollSound.play();
 
         // generate random numbers on the dice
-        console.log("Player is = ", player.index);
         player.roll1 = Math.floor(Math.random()*6) + 1;
         player.roll2 = Math.floor(Math.random()*6) + 1;
         dice1.setAttribute('src', `images/${dice[player.roll1-1]}`);
@@ -188,7 +185,6 @@
             checkWinningCondition();
         }
 
-        console.log("Turn = ", turn);
         return;
     }
 
