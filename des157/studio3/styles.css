@@ -52,6 +52,7 @@ header a{
     position: absolute;
     top: 4%;
     right: 2%;
+    cursor: pointer;
 }
 
 .instructions{
@@ -110,6 +111,7 @@ a{
     margin: 0 0.5rem;
     width: 100px;
     display: inline-block;
+    cursor: pointer;
 }
 
 a:hover{
@@ -170,6 +172,7 @@ footer a{
     padding: 0 3rem;
     color: var(--dark-spot);
     text-decoration: none;
+    cursor: pointer;
 }
 
 footer a:last-child{
