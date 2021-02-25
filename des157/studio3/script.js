@@ -19,15 +19,15 @@
     const messageText = document.getElementById('message');
     const playerTurn = document.getElementById('playerturn');
     const dice = ['die1.png', 'die2.png', 'die3.png', 'die4.png', 'die5.png', 'die6.png'];
-    const dice1 = document.getElementById('dice1');
-    const dice2 = document.getElementById('dice2');
+    var dice1 = document.getElementById('dice1');
+    var dice2 = document.getElementById('dice2');
     const scorePlayer1 = document.getElementById('score1');
     const scorePlayer2 = document.getElementById('score2');
     const winnerText = document.getElementById('winner');
     const overlay = document.getElementById('win-overlay');
     const overlayContent = document.getElementById('overlaycontent');
-    const turn = 0; // equal to 0 for player 1, 1 for player 2
-    const gameOver = false;
+    var turn = 0; // equal to 0 for player 1, 1 for player 2
+    var gameOver = false;
 
     // sounds
     const diceRollSound = new Audio('media/rolldice.wav');
