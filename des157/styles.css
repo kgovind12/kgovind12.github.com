@@ -87,6 +87,9 @@ footer{
     padding: 2rem;
     display: flex;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 footer a{
