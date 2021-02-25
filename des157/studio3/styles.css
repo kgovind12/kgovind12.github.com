@@ -17,10 +17,7 @@ h1, h2, h3, h4{
     font-family: 'Varela Round', sans-serif;
 }
 
-main{
-    text-align: center;
-    margin: 0 3rem;
-}
+/* Header */
 
 .game-title{
     display: flex;
@@ -63,6 +60,13 @@ header a{
     margin-bottom: 3rem;
     line-height: 1.5em;
     padding-left: 10%;
+}
+
+/* Main */
+
+main{
+    text-align: center;
+    margin: 0 3rem;
 }
 
 #playgame{
@@ -141,10 +145,16 @@ a:hover{
     background-color: var(--main-red);
 }
 
+
+/* Hide sections of the design */
+
 .hide{
     opacity: 0;
     transform: scale(0);
 }
+
+
+/* Footer */
 
 footer{
     background-color: var(--spot-color);
