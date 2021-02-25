@@ -164,6 +164,7 @@
             player.index == 0 ? (scorePlayer1.innerHTML = '0') : (scorePlayer2.innerHTML = '0');
             player.index == 0 ? (rollPlayer1.innerHTML = 'Roll') : (rollPlayer2.innerHTML = 'Roll'); // set the player's button back to 'Roll'
             turn = !turn;
+            playerTurn.innerHTML = `Player ${turn+1}'s turn`;
         } else if(player.roll1 === 1 || player.roll2 === 1) {
             // One rolled - switch turn
             player.index == 0 ? (rollPlayer1.innerHTML = 'Roll') : (rollPlayer2.innerHTML = 'Roll'); // set the player's button back to 'Roll'
