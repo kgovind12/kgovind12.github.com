@@ -8,9 +8,10 @@
     --card-front5: #e3c69c;
     --card-front6: #E4DFDA;
     --card-front7: #ebc7c9;
-    --card-front8: #DDEDAA;
+    --card-front8: #aaede3;
     --p-text: rgb(50, 50, 50);
     --btn-color: #d0f0f2;
+    --clr: rgb(49, 204, 206);
 }
 
 /* Typography */
@@ -69,9 +70,9 @@ aside a:hover{
 }
 
 main{
+    position: relative;
     margin: auto;
 }
-
 
 /* Cards */
 
@@ -138,3 +139,26 @@ main{
 .q6 .cardfront{ background-color: var(--card-front6); }
 .q7 .cardfront{ background-color: var(--card-front7); }
 .q8 .cardfront{ background-color: var(--card-front8); }
+
+
+/* Overlay styles */
+
+.hide{
+    opacity: 0;
+}
+
+#overlay{
+    padding: 2rem;
+    background-color: rgba(138, 225, 223, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100%;
+    transition: all 1s ease;
+}
+
+#gameOver{
+    text-align: center;
+}

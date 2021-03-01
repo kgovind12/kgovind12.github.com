@@ -4,6 +4,8 @@
 
     const cards = document.querySelectorAll('.card');   // get all the cards
     const matchesText = document.getElementById('matches');
+    const gameOverText = document.getElementById('gameOver');
+    const overlay = document.getElementById('overlay');
 
     // create a list of key-value pair objects
     // using HTML &times entity for multiplication and <sup></sup> tag for exponents
@@ -35,7 +37,6 @@
 
         for(var card of cards) {
             card.addEventListener('click', function() {
-                console.log(`flipping ${this.className}`);
                 this.classList.toggle('flip');
                 gameData.cardsOpened++;
     
@@ -50,7 +51,13 @@
                     if(checkMatch(gameData.class1, gameData.class2)) {
                         // if they are a match, increment matches and remove those cards from the board
                         gameData.matchesFound++;
-                        setTimeout(function() { hideCards(gameData.class1) }, 1500);
+                        setTimeout(function() { 
+                            hideCards(gameData.class1);
+                            matchesText.innerHTML = `Matches found: ${gameData.matchesFound}/8`; 
+                            if(gameData.matchesFound == 8) {
+                                gameOver();
+                            }
+                        }, 1500);
                     } else {
                         // if they are not a match, flip them back over and continue
                         setTimeout(closeCards, 1500);
@@ -70,7 +77,6 @@
     }
 
     function hideCards(matchedClass) {
-        matchesText.innerHTML = `Matches found: ${gameData.matchesFound}/8`;
         for(var matchedCard of document.getElementsByClassName(matchedClass)) {
             matchedCard.style.visibility = 'hidden';
         }
@@ -80,5 +86,17 @@
         for(var openCard of document.querySelectorAll('.flip')) {
             openCard.classList.remove('flip');
         }
+    }
+
+    function gameOver() {
+        if(gameData.matchesFound == 8) {
+            gameOverText.innerHTML = 'You\'re a Geometry pro!';
+        } else {
+            // Still need to deal with the losing case
+            gameOverText.innerHTML = 'Try again! You\'ll get there!'
+        }
+        overlay.className = '';
+        overlay.style.transform = 'scale(100%)';
+        overlay.style.opacity = 1;
     }
 })();
