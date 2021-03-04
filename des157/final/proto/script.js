@@ -68,6 +68,7 @@
         }
     }
 
+    // return true if card1 matches card2
     function checkMatch(class1, class2) {
         if (class1 === class2) {
             return true;
@@ -76,18 +77,21 @@
         }
     }
 
+    // hide the cards with given class
     function hideCards(matchedClass) {
         for(var matchedCard of document.getElementsByClassName(matchedClass)) {
             matchedCard.style.visibility = 'hidden';
         }
     }
 
+    // close all the cards
     function closeCards() {
         for(var openCard of document.querySelectorAll('.flip')) {
             openCard.classList.remove('flip');
         }
     }
 
+    // if the game is over, display the game over overlay
     function gameOver() {
         if(gameData.matchesFound == 8) {
             gameOverText.innerHTML = 'You\'re a Geometry pro!';

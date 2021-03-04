@@ -1,17 +1,10 @@
 :root{
-    --bg-color: rgb(148, 206, 148);
-    --card-back: #48A9A6;
-    --card-front1: #84b3ce;
-    --card-front2: #d38a8e;
-    --card-front3: #b9bfe3;
-    --card-front4: #e8a987;
-    --card-front5: #e3c69c;
-    --card-front6: #E4DFDA;
-    --card-front7: #ebc7c9;
-    --card-front8: #aaede3;
+    --body-bg: #FFF2D0;
+    --bg-color: #8CD4B2;
+    --card-back: #5fc0a9;
+    --card-front: #fff; 
     --p-text: rgb(50, 50, 50);
-    --btn-color: #d0f0f2;
-    --clr: rgb(49, 204, 206);
+    --btn-color: #E9D298;
 }
 
 /* Typography */
@@ -36,7 +29,7 @@ p{
 
 
 body{
-    /* overflow: hidden; */
+    background-color: var(--body-bg);
     margin: 0;
     display: flex;
     font-family: 'Nunito Sans', sans-serif;
@@ -58,6 +51,7 @@ aside a{
 	text-decoration: none;
     margin-top: 2rem;
     transition: 0.5s ease;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.5);
 }
 
 aside a:hover{
@@ -123,6 +117,7 @@ main{
 }
 
 .cardfront{
+    background-color: var(--card-front);
     transform: rotateY(180deg);
     position: absolute;
     width: 100%;
@@ -131,15 +126,23 @@ main{
     color: black;
 }
 
-.q1 .cardfront{ background-color: var(--card-front1); }
-.q2 .cardfront{ background-color: var(--card-front2); }
-.q3 .cardfront{ background-color: var(--card-front3); }
-.q4 .cardfront{ background-color: var(--card-front4); }
-.q5 .cardfront{ background-color: var(--card-front5); }
-.q6 .cardfront{ background-color: var(--card-front6); }
-.q7 .cardfront{ background-color: var(--card-front7); }
-.q8 .cardfront{ background-color: var(--card-front8); }
+/* Footer */
 
+footer{
+    background-color: rgb(70, 70, 70);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    padding: 0 3rem;
+    color: white;
+    text-decoration: none;
+}
 
 /* Overlay styles */
 
