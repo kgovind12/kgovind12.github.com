@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Geomemory!</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Patua+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <aside>
+        <div class="gameinfo">
+            <h1>Welcome to Geomemory!</h1>
+            <p>Want to be a geometry pro?<br>Find all the matches before the time is up!</p>
+    
+            <!-- Need to keep this button for the timer to start -->
+            <!-- <a href="">Start Game</a> -->
+    
+            <h3 id="matches">Matches found: 0/8</h3>
+        </div>
+    </aside>
+
+    <main>
+            <!-- 16 cards -->
+            <div class="cards">
+                <div class="card q2">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+
+
+                <div class="card q3">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q7">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q1">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q6">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q5">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q8">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="50px" height="auto">
+                    </div>
+                </div>
+                <div class="card q6">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q1">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="50px" height="auto">
+                    </div>
+                </div>
+                <div class="card q8">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q3">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q5">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q7">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q4">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q2">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+                <div class="card q4">
+                    <div class="cardfront">
+                        <p class="cardtext"></p>
+                    </div>
+                    <div class="cardback">
+                        <img src="images/cardgraphic.png" alt="card illustration" width="40px" height="auto">
+                    </div>
+                </div>
+            </div>
+
+            <div id="overlay" class="hide">
+                <h1 id="gameOver">You're a Geometry Pro!</h1>
+            </div>
+    </main>
+
+    <footer>
+        <a href="mailto:&#107;&#103;&#111;&#118;&#105;&#110;&#100;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email</a>
+        <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+    </footer>
+</body>
+</html>
