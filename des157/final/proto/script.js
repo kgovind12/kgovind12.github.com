@@ -47,11 +47,20 @@
     
                 // if this is the second open card, get its class and check for a match
                 if(gameData.cardsOpened == 2) {
+                    // disable card click
+                    disableClick(cards, true);
+
                     gameData.class2 = this.className;
                     if(checkMatch(gameData.class1, gameData.class2)) {
                         // if they are a match, increment matches and remove those cards from the board
-                        gameData.matchesFound++;
+                        gameData.matchesFound++;  
+                        
                         setTimeout(function() { 
+                            // enable card click after response completes
+                            // card.disabled = false;
+                            // card.style.pointerEvents = 'auto';
+                            disableClick(cards, false);
+
                             hideCards(gameData.class1);
                             matchesText.innerHTML = `Matches found: ${gameData.matchesFound}/8`; 
                             if(gameData.matchesFound == 8) {
@@ -60,11 +69,26 @@
                         }, 1500);
                     } else {
                         // if they are not a match, flip them back over and continue
-                        setTimeout(closeCards, 1500);
+                        setTimeout(function () {
+                            closeCards();
+                            disableClick(cards, false);
+                        }, 1500);
                     }
                     gameData.cardsOpened = 0;
                 }
             });
+        }
+    }
+
+    function disableClick(cards, disabled) {
+        if(disabled) {
+            for(var card of cards) {
+                card.style.pointerEvents = 'none';
+            }
+        } else {
+            for(var card of cards) {
+                card.style.pointerEvents = 'auto';
+            }
         }
     }
 
