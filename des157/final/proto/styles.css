@@ -7,16 +7,26 @@
     --btn-color: #E9D298;
 }
 
+body{
+    background-color: var(--body-bg);
+    margin: 0;
+    display: flex;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
 /* Typography */
 
 h1{
     font-family: 'Patua One', cursive;
     font-size: 3.2em;
+}
+
+.gameinfo h1{
     margin-top: 1rem;
     padding-bottom: 2rem;
 }
 
-h3{
+.gamedata{
     font-weight: 600;
     position: absolute;
     bottom: 8%;
@@ -27,14 +37,6 @@ p{
     font-size: 1.4em;
     line-height: 1.5em;
     color: var(--p-text);
-}
-
-
-body{
-    background-color: var(--body-bg);
-    margin: 0;
-    display: flex;
-    font-family: 'Nunito Sans', sans-serif;
 }
 
 aside{
@@ -51,7 +53,6 @@ aside a{
     color: var(--p-text);
 	padding: 15px 30px;
 	text-decoration: none;
-    margin-top: 2rem;
     transition: 0.5s ease;
     box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.5);
 }
@@ -67,7 +68,8 @@ aside a:hover{
 
 main{
     position: relative;
-    margin: 3rem auto;
+    margin: auto;
+    padding-bottom: 3rem;
 }
 
 /* Cards */
@@ -145,6 +147,10 @@ footer a{
     padding: 0 3rem;
     color: white;
     text-decoration: none;
+}
+
+footer a:hover{
+    opacity: 0.8;
 }
 
 /* Overlay styles */

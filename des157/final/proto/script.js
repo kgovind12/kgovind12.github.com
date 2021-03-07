@@ -6,6 +6,8 @@
     const matchesText = document.getElementById('matches');
     const gameOverText = document.getElementById('gameOver');
     const overlay = document.getElementById('overlay');
+    const timeText = document.getElementById('time');
+    const restartBtn = document.getElementById('restart');
 
     // create a list of key-value pair objects
     // using HTML &times entity for multiplication and <sup></sup> tag for exponents
@@ -30,6 +32,11 @@
     setUpGame();
 
     function setUpGame() {
+        startTimer();
+        closeCards();   // initially, close all the cards
+        showCards();    // initially, show all the cards
+        matchesText.innerHTML = 'Matches found: 0/8'; 
+
         for(let i=0; i<pairs.length; i++) {
             document.querySelectorAll(`.q${i+1} .cardtext`)[0].innerHTML = pairs[i].key;
             document.querySelectorAll(`.q${i+1} .cardtext`)[1].innerHTML = pairs[i].value;
@@ -78,6 +85,31 @@
                 }
             });
         }
+
+        restartBtn.addEventListener('click', function () {
+            stopTimer();
+            setUpGame();
+        });
+    }
+
+    function startTimer() {
+        var seconds = 120;
+        var timer = setInterval(function () {
+            timeText.innerHTML = `Time Remaining: ${seconds}s`;
+
+            if (seconds >= 1) {
+                seconds--;
+            }
+            if(seconds == 0) {
+                // stopTimer(timer);
+                gameOver();
+            }
+        }, 1000);
+    }
+
+    function stopTimer(timer) {
+        clearInterval(timer);
+        timeText.innerHTML = `Time Remaining: 0s`;
     }
 
     function disableClick(cards, disabled) {
@@ -101,10 +133,22 @@
         }
     }
 
+    function hideAllCards() {
+        for(var card of cards) {
+            card.style.visibility = 'hidden';
+        }
+    }
+
     // hide the cards with given class
     function hideCards(matchedClass) {
         for(var matchedCard of document.getElementsByClassName(matchedClass)) {
             matchedCard.style.visibility = 'hidden';
+        }
+    }
+
+    function showCards() {
+        for(var card of cards) {
+            card.style.visibility = 'visible';
         }
     }
 
@@ -117,11 +161,15 @@
 
     // if the game is over, display the game over overlay
     function gameOver() {
+        hideAllCards();
+        // stop the timer
+        // stopTimer();
+        
         if(gameData.matchesFound == 8) {
             gameOverText.innerHTML = 'You\'re a Geometry pro!';
         } else {
             // Still need to deal with the losing case
-            gameOverText.innerHTML = 'Try again! You\'ll get there!'
+            gameOverText.innerHTML = 'Maybe you need a refresher!';
         }
         overlay.className = '';
         overlay.style.transform = 'scale(100%)';
