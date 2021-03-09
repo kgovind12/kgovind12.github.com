@@ -6,6 +6,8 @@
     const matchesText = document.getElementById('matches');
     const gameOverText = document.getElementById('gameOver');
     const overlay = document.getElementById('overlay');
+    const timeText = document.getElementById('time');
+    const restartBtn = document.getElementById('restart');
 
     // create a list of key-value pair objects
     // using HTML &times entity for multiplication and <sup></sup> tag for exponents
@@ -27,9 +29,19 @@
         matchesFound: 0
     }
 
+    var timer;
+
     setUpGame();
 
     function setUpGame() {
+        startTimer();
+        showCards();    // initially, show all the cards
+        matchesText.innerHTML = 'Matches found: 0/8'; 
+
+        // hide overlay
+        overlay.className = 'hide';
+        overlay.style.opacity = 0;
+
         for(let i=0; i<pairs.length; i++) {
             document.querySelectorAll(`.q${i+1} .cardtext`)[0].innerHTML = pairs[i].key;
             document.querySelectorAll(`.q${i+1} .cardtext`)[1].innerHTML = pairs[i].value;
@@ -57,10 +69,7 @@
                         
                         setTimeout(function() { 
                             // enable card click after response completes
-                            // card.disabled = false;
-                            // card.style.pointerEvents = 'auto';
                             disableClick(cards, false);
-
                             hideCards(gameData.class1);
                             matchesText.innerHTML = `Matches found: ${gameData.matchesFound}/8`; 
                             if(gameData.matchesFound == 8) {
@@ -78,8 +87,35 @@
                 }
             });
         }
+
+        restartBtn.addEventListener('click', function () {
+            location.reload();
+        });
     }
 
+    // start a timer for 120 seconds
+    function startTimer() {
+        var seconds = 120;
+        timer = setInterval(function () {
+            timeText.innerHTML = `Time Remaining: ${seconds}s`;
+
+            if (seconds >= 1) {
+                seconds--;
+            }
+            if(seconds == 0) {
+                // stopTimer(timer);
+                gameOver();
+            }
+        }, 1000);
+    }
+
+    // clear the set interval
+    function stopTimer(timer) {
+        clearInterval(timer);
+        timeText.innerHTML = `Time Remaining: 0s`;
+    }
+
+    // do not allow cards to be clicked while response is happening
     function disableClick(cards, disabled) {
         if(disabled) {
             for(var card of cards) {
@@ -101,10 +137,23 @@
         }
     }
 
+    // hide all the cards
+    function hideAllCards() {
+        for(var card of cards) {
+            card.style.visibility = 'hidden';
+        }
+    }
+
     // hide the cards with given class
     function hideCards(matchedClass) {
         for(var matchedCard of document.getElementsByClassName(matchedClass)) {
             matchedCard.style.visibility = 'hidden';
+        }
+    }
+
+    function showCards() {
+        for(var card of cards) {
+            card.style.visibility = 'visible';
         }
     }
 
@@ -117,11 +166,15 @@
 
     // if the game is over, display the game over overlay
     function gameOver() {
+        hideAllCards();
+        stopTimer(timer);
+        
         if(gameData.matchesFound == 8) {
-            gameOverText.innerHTML = 'You\'re a Geometry pro!';
+            console.log("you win");
+            gameOverText.innerHTML = 'You\'re a Geometry Pro!';
         } else {
             // Still need to deal with the losing case
-            gameOverText.innerHTML = 'Try again! You\'ll get there!'
+            gameOverText.innerHTML = 'Maybe you need a refresher!';
         }
         overlay.className = '';
         overlay.style.transform = 'scale(100%)';
