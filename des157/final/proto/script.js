@@ -29,13 +29,18 @@
         matchesFound: 0
     }
 
+    var timer;
+
     setUpGame();
 
     function setUpGame() {
         startTimer();
-        closeCards();   // initially, close all the cards
         showCards();    // initially, show all the cards
         matchesText.innerHTML = 'Matches found: 0/8'; 
+
+        // hide overlay
+        overlay.className = 'hide';
+        overlay.style.opacity = 0;
 
         for(let i=0; i<pairs.length; i++) {
             document.querySelectorAll(`.q${i+1} .cardtext`)[0].innerHTML = pairs[i].key;
@@ -64,10 +69,7 @@
                         
                         setTimeout(function() { 
                             // enable card click after response completes
-                            // card.disabled = false;
-                            // card.style.pointerEvents = 'auto';
                             disableClick(cards, false);
-
                             hideCards(gameData.class1);
                             matchesText.innerHTML = `Matches found: ${gameData.matchesFound}/8`; 
                             if(gameData.matchesFound == 8) {
@@ -87,14 +89,14 @@
         }
 
         restartBtn.addEventListener('click', function () {
-            stopTimer();
-            setUpGame();
+            location.reload();
         });
     }
 
+    // start a timer for 120 seconds
     function startTimer() {
         var seconds = 120;
-        var timer = setInterval(function () {
+        timer = setInterval(function () {
             timeText.innerHTML = `Time Remaining: ${seconds}s`;
 
             if (seconds >= 1) {
@@ -107,11 +109,13 @@
         }, 1000);
     }
 
+    // clear the set interval
     function stopTimer(timer) {
         clearInterval(timer);
         timeText.innerHTML = `Time Remaining: 0s`;
     }
 
+    // do not allow cards to be clicked while response is happening
     function disableClick(cards, disabled) {
         if(disabled) {
             for(var card of cards) {
@@ -133,6 +137,7 @@
         }
     }
 
+    // hide all the cards
     function hideAllCards() {
         for(var card of cards) {
             card.style.visibility = 'hidden';
@@ -162,11 +167,11 @@
     // if the game is over, display the game over overlay
     function gameOver() {
         hideAllCards();
-        // stop the timer
-        // stopTimer();
+        stopTimer(timer);
         
         if(gameData.matchesFound == 8) {
-            gameOverText.innerHTML = 'You\'re a Geometry pro!';
+            console.log("you win");
+            gameOverText.innerHTML = 'You\'re a Geometry Pro!';
         } else {
             // Still need to deal with the losing case
             gameOverText.innerHTML = 'Maybe you need a refresher!';

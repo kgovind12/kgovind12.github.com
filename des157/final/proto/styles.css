@@ -166,7 +166,7 @@ footer a:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: -1;
     width: 100%;
     transition: 1s ease;
 }
