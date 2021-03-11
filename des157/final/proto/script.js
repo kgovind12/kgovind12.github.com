@@ -18,8 +18,8 @@
     const cardFlipSound = new Audio('media/Click.mp3'); // made by snapping a hair clip
     const correctMatch = new Audio('media/Correct.mp3');    // made by flicking a steel water bottle
     const wrongMatch = new Audio('media/Wrong.mp3');    // made by shaking a pill bottle (completely safe)
-    const gameWin = new Audio('media/Gamewin.mp3');
-    const gameLose = new Audio('media/Gamelose.mp3');
+    const gameWin = new Audio('media/Gamewin.mp3'); // made using a piano
+    const gameLose = new Audio('media/Gamelose.mp3');   // made using a piano
 
     // create a list of key-value pair objects
     // using HTML &times entity for multiplication and <sup></sup> tag for exponents
