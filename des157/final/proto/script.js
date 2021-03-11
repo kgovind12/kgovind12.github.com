@@ -18,6 +18,8 @@
     const cardFlipSound = new Audio('media/Click.mp3'); // made by snapping a hair clip
     const correctMatch = new Audio('media/Correct.mp3');    // made by flicking a steel water bottle
     const wrongMatch = new Audio('media/Wrong.mp3');    // made by shaking a pill bottle (completely safe)
+    const gameWin = new Audio('media/Gamewin.mp3');
+    const gameLose = new Audio('media/Gamelose.mp3');
 
     // create a list of key-value pair objects
     // using HTML &times entity for multiplication and <sup></sup> tag for exponents
@@ -41,8 +43,10 @@
 
     var timer;
 
-    // initially, hide the restart button
+    // initially, hide the restart button and the game text
     restartBtn.style.display = 'none';
+    matchesText.style.visibility = 'hidden';
+    timeText.style.visibility = 'hidden';
 
     // button that starts the game
     startBtn.addEventListener('click', startGame);
@@ -52,6 +56,8 @@
         showCards();    // initially, show all the cards
         matchesText.innerHTML = 'Matches found: 0/8'; 
         timeText.style.color = 'black';
+        timeText.style.visibility = 'visible';
+        matchesText.style.visibility = 'visible';
 
         // show the restart btn and hide the start btn
         startBtn.style.display = 'none';
@@ -122,7 +128,7 @@
         timer = setInterval(function () {
             timeText.innerHTML = `Time Remaining: ${seconds}s`;
 
-            if (seconds >= 0) {
+            if (seconds >= 1) {
                 seconds--;
             }
 
@@ -197,9 +203,12 @@
         stopTimer(timer);
         
         if(gameData.matchesFound == 8) {
+            // game is won
+            gameWin.play();
             gameOverText.innerHTML = 'You\'re a Geometry Pro!';
         } else {
-            // Still need to deal with the losing case
+            // game is lost
+            gameLose.play();
             gameOverText.innerHTML = 'Maybe you need a refresher!';
         }
         overlay.className = '';
