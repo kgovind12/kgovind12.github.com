@@ -8,6 +8,7 @@
     const overlay = document.getElementById('overlay');
     const timeText = document.getElementById('time');
     const restartBtn = document.getElementById('restart');
+    const startBtn = document.getElementById('start');
 
     // create a list of key-value pair objects
     // using HTML &times entity for multiplication and <sup></sup> tag for exponents
@@ -31,12 +32,20 @@
 
     var timer;
 
-    setUpGame();
+    // initially, hide the restart button
+    restartBtn.style.display = 'none';
 
-    function setUpGame() {
+    // button that starts the game
+    startBtn.addEventListener('click', startGame);
+
+    function startGame() {
         startTimer();
         showCards();    // initially, show all the cards
         matchesText.innerHTML = 'Matches found: 0/8'; 
+
+        // show the restart btn and hide the start btn
+        startBtn.style.display = 'none';
+        restartBtn.style.display = 'inline-block';
 
         // hide overlay
         overlay.className = 'hide';
