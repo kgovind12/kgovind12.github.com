@@ -1,3 +1,7 @@
+// Geomemory is an educational memory game to help students memorize geometry formulae in an easy and fun way!
+// This game was created using the concepts from studio 3, but adapted for interactive learning.
+// Sounds are fully self-made.
+
 (function() {
     'use strict';
     console.log('reading js');
@@ -9,6 +13,11 @@
     const timeText = document.getElementById('time');
     const restartBtn = document.getElementById('restart');
     const startBtn = document.getElementById('start');
+
+    // sounds
+    const cardFlipSound = new Audio('media/Click.mp3'); // made by snapping a hair clip
+    const correctMatch = new Audio('media/Correct.mp3');    // made by flicking a steel water bottle
+    const wrongMatch = new Audio('media/Wrong.mp3');    // made by shaking a pill bottle (completely safe)
 
     // create a list of key-value pair objects
     // using HTML &times entity for multiplication and <sup></sup> tag for exponents
@@ -42,6 +51,7 @@
         startTimer();
         showCards();    // initially, show all the cards
         matchesText.innerHTML = 'Matches found: 0/8'; 
+        timeText.style.color = 'black';
 
         // show the restart btn and hide the start btn
         startBtn.style.display = 'none';
@@ -58,6 +68,7 @@
 
         for(var card of cards) {
             card.addEventListener('click', function() {
+                cardFlipSound.play();
                 this.classList.toggle('flip');
                 gameData.cardsOpened++;
     
@@ -77,6 +88,8 @@
                         gameData.matchesFound++;  
                         
                         setTimeout(function() { 
+                            correctMatch.play();
+
                             // enable card click after response completes
                             disableClick(cards, false);
                             hideCards(gameData.class1);
@@ -88,6 +101,7 @@
                     } else {
                         // if they are not a match, flip them back over and continue
                         setTimeout(function () {
+                            wrongMatch.play();
                             closeCards();
                             disableClick(cards, false);
                         }, 1500);
@@ -108,11 +122,15 @@
         timer = setInterval(function () {
             timeText.innerHTML = `Time Remaining: ${seconds}s`;
 
-            if (seconds >= 1) {
+            if (seconds >= 0) {
                 seconds--;
             }
+
+            if(seconds < 10) {
+                timeText.style.color = 'red';
+            }
+
             if(seconds == 0) {
-                // stopTimer(timer);
                 gameOver();
             }
         }, 1000);
@@ -179,7 +197,6 @@
         stopTimer(timer);
         
         if(gameData.matchesFound == 8) {
-            console.log("you win");
             gameOverText.innerHTML = 'You\'re a Geometry Pro!';
         } else {
             // Still need to deal with the losing case
