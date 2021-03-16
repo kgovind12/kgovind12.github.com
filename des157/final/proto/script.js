@@ -124,11 +124,9 @@
 
     // start a timer for 120 seconds
     function startTimer() {
-        var seconds = 120;
+        var seconds = 12;
         timer = setInterval(function () {
-            timeText.innerHTML = `Time Remaining: ${seconds}s`;
-
-            if (seconds >= 1) {
+            if (seconds >= 0) {
                 seconds--;
             }
 
@@ -139,6 +137,8 @@
             if(seconds == 0) {
                 gameOver();
             }
+
+            timeText.innerHTML = `Time Remaining: ${seconds}s`;
         }, 1000);
     }
 
