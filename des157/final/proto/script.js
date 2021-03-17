@@ -124,7 +124,7 @@
 
     // start a timer for 120 seconds
     function startTimer() {
-        var seconds = 12;
+        var seconds = 120;
         timer = setInterval(function () {
             if (seconds >= 0) {
                 seconds--;
